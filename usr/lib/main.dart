@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:couldai_user_app/screens/menu_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,6 +37,10 @@ class MyApp extends StatelessWidget {
           bodyLarge: TextStyle(color: Colors.black),
           bodyMedium: TextStyle(color: Colors.black87),
           headlineLarge: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
+          headlineSmall: TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.bold,
           ),
@@ -89,7 +94,10 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: 40),
             ElevatedButton(
               onPressed: () {
-                // Navigate to Menu Screen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MenuScreen()),
+                );
               },
               child: const Text('Voir le menu'),
             ),
